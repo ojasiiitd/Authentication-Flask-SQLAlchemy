@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<div class="container" style="margin-top: 20px;">
+	<section class="hero is-info">
+	  <div class="hero-body">
+	      <h1 class="is-size-1 has-text-weight-bold has-text-dark">
+	        <i class="fas fa-angle-double-right"></i>
+	        Hello!
+	      </h1>
+	  </div>
+	</section>
+	<div class="columns" style="margin-top: 10px;">
+		<div class="column is-half">
+	        <article class="message is-info">
+	          <div class="message-header has-text-dark is-size-3">
+	            <p><i class="fas fa-laptop"></i>  About My Project</p>
+	          </div>
+	          <div class="message-body had-text-dark is-size-5">
+							I require a moment of your time for a very quick survey for my project.
+							I have been working on a flask backend authentication system with basic
+							login and sign-up operations. I have used Flask-SQLAlchemy for my
+							database management.
+						</div>
+	        </article>
+	      </div>
+	      <div class="column is-3 is-offset-2" style="margin-top: 80px;">
+	      	<button class="button is-large is-warning">
+	      		<div>
+	      			<a href="/survey" class="has-text-dark">
+	      				<i class="fas fa-poll"></i>  <strong>Sign Up</strong>
+	      			</a>
+	      		</div>
+	      	</button>
+	      </div>
+	  </div>
+	<div class="columns" style="margin-top: 10px;">
+		<div class="column is-4 is-offset-2" style="margin-top: 70px;">
+      	<button class="button is-large is-primary">
+      		<div>
+      			<a href="https://github.com/ojasiiitd" class="has-text-dark">
+      				<i class="fab fa-github"></i> <strong>Goto Github</strong>
+      			</a>
+      		</div>
+      	</button>
+      </div>
+      <div class="column is-half">
+	        <article class="message is-info">
+	          <div class="message-header has-text-dark is-size-3">
+	            <p><i class="fab fa-github"></i>  Open Source!</p>
+	          </div>
+	          <div class="message-body had-text-dark is-size-5">
+	          	I am also a big fan of open source, so I have added this project
+	          	to my Github account!!
+	          </div>
+	        </article>
+	    </div>
+	</div>
+</div>
+
+{% endblock %}
