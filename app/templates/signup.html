@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<div class="container" style="margin-top: 20px;">
+	<section class="hero is-small is-warning">
+	  <div class="hero-body">
+	      <h1 class="is-size-1 has-text-weight-bold has-text-dark">
+	        <i class="fas fa-arrow-alt-circle-right"></i>  Sign Up
+	      </h1>
+	  </div>
+	</section>
+
+	<div class="column is-half box" style="margin-top: 20px;">
+		<form method="post" action="" style="margin-top: 30px;">
+			<div class="field"> 
+                {{ form.uname.label(class="label") }}
+                {{ form.uname(class="input") }}                
+			</div>
+			<div class="field">
+                {{ form.email.label(class="label") }}
+				{{ form.email(class="input") }}                
+			</div>
+			<div class="field">
+                {{ form.password.label(class="label") }}
+                {{ form.password(class="input" , type="password")}}
+            </div>
+            <div class="field">
+                {{ form.confirm.label(class="label") }}
+                {{ form.confirm(class="input" , type="password")}}              
+			</div>
+			<div class="field">
+                {{ form.submit(class="button is-primary") }}              
+            </div>
+        </form>
+        <div>
+            <a href="/login" class="is-link">
+                <small>Already have an account?</small>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
