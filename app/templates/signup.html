@@ -14,20 +14,56 @@
 	<div class="column is-half box" style="margin-top: 20px;">
 		<form method="post" action="" style="margin-top: 30px;">
 			<div class="field"> 
-                {{ form.uname.label(class="label") }}
-                {{ form.uname(class="input") }}                
+                    {{ form.uname.label(class="label") }}
+                    {% if form.uname.errors %}
+                        {{ form.uname(class="input is-danger") }}
+                        <ul class="help is-danger">
+                            {% for error in form.uname.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        {{ form.uname(class="input") }}
+                    {% endif %}
 			</div>
 			<div class="field">
-                {{ form.email.label(class="label") }}
-				{{ form.email(class="input") }}                
+                    {{ form.email.label(class="label") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="input is-danger") }}
+                        <ul class="help is-danger">
+                            {% for error in form.email.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        {{ form.email(class="input") }}
+                    {% endif %}
 			</div>
 			<div class="field">
-                {{ form.password.label(class="label") }}
-                {{ form.password(class="input" , type="password")}}
+                    {{ form.password.label(class="label") }}
+                    {% if form.password.errors %}
+                        {{ form.password(class="input is-danger") }}
+                        <ul class="help is-danger">
+                            {% for error in form.password.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        {{ form.password(class="input") }}
+                    {% endif %}
             </div>
             <div class="field">
-                {{ form.confirm.label(class="label") }}
-                {{ form.confirm(class="input" , type="password")}}              
+                    {{ form.confirm.label(class="label") }}
+                    {% if form.confirm.errors %}
+                        {{ form.confirm(class="input is-danger") }}
+                        <ul class="help is-danger">
+                            {% for error in form.confirm.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        {{ form.confirm(class="input") }}
+                    {% endif %}
 			</div>
 			<div class="field">
                 {{ form.submit(class="button is-primary") }}              
