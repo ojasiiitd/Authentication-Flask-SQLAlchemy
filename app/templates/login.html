@@ -14,15 +14,33 @@
 	<div class="column is-half box" style="margin-top: 20px;">
 		<form method="post" action="" style="margin-top: 30px;">
 			<div class="field">
-                {{ form.uname.label(class="label") }}
-                {{ form.uname(class="input") }}                
+					{{ form.uname.label(class="label") }}
+					{% if form.uname.errors %}
+							{{ form.uname(class="input is-danger") }}
+							<div class="help is-danger">
+									{% for error in form.uname.errors %}
+											{{ error }}
+									{% endfor %}
+							</div>
+					{% else %}
+							{{ form.uname(class="input") }}
+					{% endif %}   
 			</div>
 			<div class="field">
-                {{ form.password.label(class="label") }}
-                {{ form.password(class="input" , type="password")}}
+					{{ form.password.label(class="label") }}
+					{% if form.password.errors %}
+							{{ form.password(class="input is-danger") }}
+							<div class="help is-danger">
+									{% for error in form.password.errors %}
+											{{ error }}
+									{% endfor %}
+							</div>
+					{% else %}
+							{{ form.password(class="input") }}
+					{% endif %}
             </div>
 			<div class="field">
-                    {{ form.submit(class="button is-primary") }}              
+								{{ form.submit(class="button is-success") }}              
             </div>
 		</form>
 	</div>
