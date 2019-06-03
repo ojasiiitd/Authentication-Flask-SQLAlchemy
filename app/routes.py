@@ -9,12 +9,18 @@ def homepage():
 
 @app.route("/signup" , methods = ['GET' , 'POST'])
 def signuppage() :
-    form = RegForm()
-    if request.method == "POST" and form.validate_on_submit() :
-        flash('Account created for %s !' % (form.uname.data))
-    return render_template("signup.html" , form = form)
+    form = RegForm(request.form)
+    if request.method == "POST" and form.validate():
+        if form.validate() :
+            flash("Account created for %s!" % (form.uname.data) , "success")
+            return redirect(url_for("homepage"))
+        # else :
+        #     flash("Sorry, account could not be created at this time" , "danger")
+        #     return redirect(url_for("signuppage"))
+    else :
+        return render_template("signup.html" , form = form)
 
 @app.route("/login" , methods = ['GET' , 'POST'])
 def loginpage():
-    form = LoginForm()
+    form = LoginForm(request.form)
     return render_template("login.html" , form = form)
