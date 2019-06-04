@@ -9,13 +9,13 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-white" href="/">
+          <a class="button is-white" href="{{ url_for('homepage') }}">
             <strong class="has-text-dark">Home</strong>
           </a>
-          <a class="button is-warning" href="/login">
+          <a class="button is-warning" href="{{ url_for('loginpage') }}">
             <strong>Login</strong>
           </a>
-          <a class="button is-warning" href="/signup">
+          <a class="button is-warning" href="{{ url_for('signuppage') }}">
             <strong>Sign Up</strong>
           </a>
         </div>
