@@ -9,7 +9,7 @@ db = SQLAlchemy(app)
 pwd = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = "loginpage"
-login_manager.login_message = "You are mot authorised to access this page. Please login/signup first."
+login_manager.login_message = "You are mot authorised to access this page. Please login first."
 login_manager.login_message_category = "danger" 
 
 from app import routes
