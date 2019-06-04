@@ -11,6 +11,9 @@ class User(db.Model) :
     def __repr__(self):
         return  'User(%s , %s)' % (self.uname , self.email)
 
+db.create_all()
+db.session.commit()
+
 # from app import db
 # db.create_all()   
 # from app import User
