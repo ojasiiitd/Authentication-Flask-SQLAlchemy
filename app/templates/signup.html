@@ -66,11 +66,11 @@
                     {% endif %}
 			</div>
 			<div class="field">
-                {{ form.submit(class="button is-primary") }}              
+                {{ form.submit(class="button is-success") }}              
             </div>
         </form>
         <div>
-            <a href="/login" class="is-link">
+            <a href="{{ url_for('loginpage') }}" class="is-link">
                 <small>Already have an account?</small>
             </a>
         </div>
