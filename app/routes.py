@@ -3,6 +3,7 @@ from app import app
 from app.forms import RegForm , LoginForm
 from app.models import User
 from app import app, db, pwd
+from flask_login import login_user
 
 @app.route('/')
 def homepage():
@@ -24,8 +25,10 @@ def signuppage() :
 @app.route("/login" , methods = ['GET' , 'POST'])
 def loginpage():
     form = LoginForm(request.form)
-    if request.method == "POST" :
-        if form.validate() :
+    if request.method == "POST" and form.validate():
+        member = User.query.filter_by(uname = form.uname.data).first()
+        if member and pwd.check_password_hash(member.password , form.password.data) :
+            login_user(member)
             flash("Welcome, %s!" % (form.uname.data) , "success")
             return redirect(url_for("homepage"))
         else :
