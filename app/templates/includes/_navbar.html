@@ -11,13 +11,22 @@
         <div class="buttons">
           <a class="button is-white" href="{{ url_for('homepage') }}">
             <strong class="has-text-dark">Home</strong>
+          {% if current_user.is_authenticated %}
+          <a class="button is-success" href="{{ url_for('member') }}">
+            <strong>Members Page</strong>
           </a>
-          <a class="button is-warning" href="{{ url_for('loginpage') }}">
-            <strong>Login</strong>
-          </a>
-          <a class="button is-warning" href="{{ url_for('signuppage') }}">
-            <strong>Sign Up</strong>
-          </a>
+            <a class="button is-dark" href="{{ url_for('logoutpage') }}">
+              <strong>Logout</strong>
+            </a>
+          {% else %}
+            </a>
+            <a class="button is-warning" href="{{ url_for('loginpage') }}">
+              <strong>Login</strong>
+            </a>
+            <a class="button is-warning" href="{{ url_for('signuppage') }}">
+              <strong>Sign Up</strong>
+            </a>
+          {% endif %}
         </div>
       </div>
     </div>
