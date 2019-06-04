@@ -4,19 +4,19 @@ from app.models import User
 class RegForm(Form) :
     uname = StringField("Username" , validators=[
         validators.DataRequired() ,
-        validators.Length(min=4)
+        validators.Length(min=4 , message = "Username must be at least 6 characters long.")
     ])
     email = StringField("E-Mail" , validators=[
         validators.DataRequired() ,
         validators.Email() ,
-        validators.Length(min=6)
+        validators.Length(min=6 , message = "Email Address must be at least 6 characters long.")
     ])
     password = PasswordField("Password" , validators=[
         validators.DataRequired() ,
-        validators.Length(min=4 , max=20)
+        validators.Length(min=4 , message = "Password must be at least 4 characters long.")
     ])
     confirm = PasswordField("Confirm Password" , validators=[
-        validators.EqualTo('password') ,
+        validators.EqualTo('password' , message = "Passwords do not match.") ,
         validators.DataRequired()
     ])
     submit = SubmitField("Sign Up")
