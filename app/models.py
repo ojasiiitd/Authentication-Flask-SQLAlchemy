@@ -1,7 +1,12 @@
 from datetime import datetime
-from app import db
+from app import db , login_manager
+from flask_login import UserMixin
 
-class User(db.Model) :
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
+
+class User(db.Model , UserMixin) :
     sno = db.Column(db.Integer , primary_key = True)
     time = db.Column(db.DateTime , default = datetime.now)
     uname = db.Column(db.String(20) , unique = True , nullable = False)
@@ -10,14 +15,3 @@ class User(db.Model) :
 
     def __repr__(self):
         return  'User(%s , %s)' % (self.uname , self.email)
-
-db.create_all()
-db.session.commit()
-
-# from app import db
-# db.create_all()   
-# from app import User
-# elt = User(uname = "ojas" , email = "ojas@gmail.com" , password = "johncena")
-# db.session.add(elt)
-# db.session.commit()
-# User.query.all()
