@@ -1,7 +1,7 @@
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     {% for category, message in messages %}
-      <div class="column is-half notification is-{{ category }}"><strong>{{ message }}</strong></div>
+      <div class="column is-half notification is-{{ category }}" style="opacity: .9"><strong>{{ message }}</strong></div>
     {% endfor %}
   {% endif %}
 {% endwith %}
