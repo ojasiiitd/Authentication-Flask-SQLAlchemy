@@ -7,7 +7,7 @@ A simple website using [Bulma](https://bulma.io/ "Bulma Website") has been used 
 ## Instructions to Setup :
 
 * Fork this repo.
-* Use `git clone https://github.com/<your-github-username>/Trying-out-Flask.git` to clone this repo into your system
+* Use `git clone https://github.com/<your-github-username>/Authentication-Flask-SQLAlchemy.git` to clone this repo into your system
 * Install pip3 on your system by `sudo apt-get install python3-pip` if not already installed.
 * Create a virtual environment by the name of **venv**. Information in setting up virtualenv can be found [here](https://docs.python-guide.org/dev/virtualenvs/ "Pipenv & Virtual Environments").
 * Enter your virtualenv by `source venv/bin/activate`
